@@ -21,6 +21,7 @@ body {
 .askTextContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -47,8 +48,9 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5ch;
+  cursor: pointer;
   animation: gradient 12s linear infinite reverse;
-  transition: letter-spacing 0.5s ease-in-out;
 }
 
 @keyframes gradient {
@@ -58,11 +60,6 @@ body {
   100% {
     background-position: 400% 50%;
   }
-}
-
-.aiName:hover {
-  letter-spacing: 0.5ch;
-  cursor: pointer;
 }
 
 .aiBoxBackground {
@@ -78,8 +75,38 @@ body {
   align-items: center;
   gap: 10px;
   border-radius: 30px;
-  background: linear-gradient(90deg, aqua, #8a2be2, magenta, orange, yellow);
+  background: linear-gradient(
+    90deg,
+    aqua,
+    #8a2be2,
+    magenta,
+    orange,
+    yellow,
+    aqua
+  );
+  background-size: 400% 100%;
   padding: 2.5px;
+  animation: gradientMove 12s linear infinite reverse;
+  transition:
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aiBoxBackground #inputArea:has(.askButton:hover) {
+  filter: brightness(1.5) contrast(1.1);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 40px rgba(138, 43, 226, 0.3),
+    0 0 60px rgba(255, 0, 255, 0.2);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
 }
 
 .aiBoxBackground #inputArea .askButton {
@@ -92,18 +119,67 @@ body {
   border-radius: 30px;
   font-size: 20px;
   font-family: sans-serif;
+  font-weight: 400;
   padding: 0 20px;
   padding-right: 25px;
   background-color: black;
   color: white;
   cursor: pointer;
-}
-
-.askButton:hover {
-  text-shadow: white 1px 1px 5px;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 .askButton .sparkle {
   filter: invert(0);
   font-size: 22px;
+}
+
+.continueToProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.continueToProfile .continueText {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.goButton {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.goButton img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  filter: invert(0);
+  transition: filter 0.3s ease-in-out;
+}
+
+.goButton:hover {
+  background-color: black;
+}
+
+.goButton:hover img {
+  filter: invert(1);
 }
