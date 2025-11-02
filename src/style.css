@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#introBackground {
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+}
+
+.askTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.askText {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: 'Momo Trust Display', sans-serif;
+  margin: 10px 0;
+}
+
+.askText .aiName {
+  font-weight: 600;
+  background: linear-gradient(
+    60deg,
+    purple,
+    #8a2be2,
+    #c471ed,
+    aqua,
+    #c471ed,
+    #8a2be2,
+    purple
+  );
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 12s linear infinite reverse;
+  transition: letter-spacing 0.5s ease-in-out;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+.aiName:hover {
+  letter-spacing: 0.5ch;
+  cursor: pointer;
+}
+
+.aiBoxBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aiBoxBackground #inputArea {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, aqua, #8a2be2, magenta, orange, yellow);
+  padding: 2.5px;
+}
+
+.aiBoxBackground #inputArea .askButton {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 0 20px;
+  padding-right: 25px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.askButton:hover {
+  text-shadow: white 1px 1px 5px;
+}
+
+.askButton .sparkle {
+  filter: invert(0);
+  font-size: 22px;
+}
