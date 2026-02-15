@@ -16,7 +16,15 @@ body {
   color: white;
   text-align: center;
   z-index: 9999;
+  backdrop-filter: blur(10px);
+  transition:
+    backdrop-filter 0.3s ease,
+    background-color 0.3s ease;
 }
+
+/* #introBackground:has(.goButton:hover) {
+  background-color: transparent;
+} */
 
 .askTextContainer {
   display: flex;
@@ -177,7 +185,7 @@ body {
 }
 
 .goButton:hover {
-  background-color: black;
+  background-color: transparent;
 }
 
 .goButton:hover img {
